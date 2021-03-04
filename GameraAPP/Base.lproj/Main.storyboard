@@ -1,24 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GameraAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urk-J1-RyO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8W-Vm-o2b">
+                                <rect key="frame" x="0.0" y="608" width="414" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBG-rx-g8u">
+                                        <rect key="frame" x="208" y="24" width="81" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Button_TakePhoto"/>
+                                        <connections>
+                                            <action selector="take:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FjT-Jz-AdR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lga-IN-TTI">
+                                        <rect key="frame" x="110" y="24" width="81" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Button_SavePhoto"/>
+                                        <connections>
+                                            <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JTN-Os-5Ql"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtW-c7-rNz">
+                                        <rect key="frame" x="311" y="24" width="81" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Button_ChangeCam"/>
+                                        <connections>
+                                            <action selector="change:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lB4-iX-o1Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXh-kY-uk2">
+                                        <rect key="frame" x="16" y="24" width="81" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Button_RetakePhoto"/>
+                                        <connections>
+                                            <action selector="retake:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sCS-Le-fie"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="KLO-B3-kAx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N8W-Vm-o2b" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="L31-1l-Ljy"/>
+                            <constraint firstAttribute="bottom" secondItem="Urk-J1-RyO" secondAttribute="bottom" id="TZX-pk-Det"/>
+                            <constraint firstItem="Urk-J1-RyO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fn1-f0-dbl"/>
+                            <constraint firstItem="Urk-J1-RyO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="i0j-nb-tRb"/>
+                            <constraint firstItem="N8W-Vm-o2b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iDH-b7-wKe"/>
+                            <constraint firstItem="Urk-J1-RyO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rAc-Es-Zrh"/>
+                            <constraint firstAttribute="trailing" secondItem="N8W-Vm-o2b" secondAttribute="trailing" id="xui-11-V5J"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="Urk-J1-RyO" id="cE7-Ce-zr0"/>
+                        <outlet property="changeButton" destination="LtW-c7-rNz" id="awj-VL-7cl"/>
+                        <outlet property="retakeButton" destination="kXh-kY-uk2" id="IFM-fx-CI5"/>
+                        <outlet property="saveButton" destination="Lga-IN-TTI" id="VHh-Mq-WZD"/>
+                        <outlet property="takeButton" destination="mBG-rx-g8u" id="1Jd-0a-56a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="95.652173913043484" y="88.392857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Button_ChangeCam" width="200" height="200"/>
+        <image name="Button_RetakePhoto" width="200" height="200"/>
+        <image name="Button_SavePhoto" width="200" height="200"/>
+        <image name="Button_TakePhoto" width="200" height="200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
